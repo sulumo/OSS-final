@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 25px;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(0, 24, 24);
+  background: linear-gradient(
+    175deg,
+    rgba(0, 13, 13, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+
+  color: #e2e8f0;
+  font-family: 'Cabin', serif;
+}
+
+.font24 {
+  font-size: 1.5rem;
+}
+
+.font18 {
+  font-size: 1.125rem;
+}
+
+.font17 {
+  font-size: 1.063rem;
+}
+
+.font16 {
+  font-size: 1rem;
+}
+
+.font15 {
+  font-size: 0.938rem;
+}
+
+.font14 {
+  font-size: 0.875rem;
+}
+
+.font13 {
+  font-size: 0.813rem;
+}
+
+.text-primary {
+  color: #3bdad3 !important;
+}
+.background-primaru {
+  background-color: #3bdad3 !important;
+}
+
+.text-secondary {
+  color: #e2e8f0 !important;
+}
+
+.active {
+  color: #3bdad3 !important;
+}
+
+.pending {
+  color: #e2e8f0 !important;
+}
+
+.text-secondary {
+  color: #e2e8f0 !important;
+}
+
+.nav-link-margin {
+  margin-bottom: 20px;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.text-ternary {
+  color: #939393;
+}
+
+.text-four {
+  color: #5d5d5d;
+}
+
+
+
+.scroll {
+  overflow: scroll !important;
+}

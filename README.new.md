@@ -1,70 +1,154 @@
-# Getting Started with Create React App
+# SpottyTunes: A Music Streaming Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
 
-## Available Scripts
+SpottyTunes is a modern music streaming web application that allows users to discover new music releases, search for tracks, and create personalized playlists. The app integrates Spotify's Web API to fetch real-time data and uses MockAPI to manage the user's favorite tracks with CRUD functionality.
 
-In the project directory, you can run:
+### Features
 
-### `npm start`
+- **Home Page:** Displays the latest music releases fetched from Spotify's API.
+- **Search Page:** Enables users to search for music and filter results based on genre, artist, or popularity.
+- **Playlist Page:** Allows users to save, view, edit, and delete their favorite tracks using MockAPI.
+- **Seamless Integration:** Combines real-time data from Spotify with user-specific data stored in MockAPI.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React (Frontend)
+- Spotify Web API (External Data)
+- MockAPI (User Data Management)
+- ESLint and Prettier (Code Linting and Formatting)
 
-### `npm test`
+## Installation and Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+- Node.js (>=16.x.x)
+- npm (>=8.x.x)
+- Spotify Developer Account (for API keys)
+- MockAPI account (for managing mock datasets)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Steps
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   git clone https://github.com/your-repository-name.git
+   cd your-repository-name
+   ```
 
-### `npm run eject`
+2. Install dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Create a `.env` file in the root directory and add your Spotify API credentials:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```env
+   REACT_APP_SPOTIFY_CLIENT_ID=your_client_id
+   REACT_APP_SPOTIFY_CLIENT_SECRET=your_client_secret
+   REACT_APP_SPOTIFY_REDIRECT_URI=http://localhost:3000
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Start the development server:
 
-## Learn More
+   ```bash
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. Access the application at [http://localhost:3000](http://localhost:3000).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Setting Up ESLint and Prettier
 
-### Code Splitting
+### Install Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To set up ESLint and Prettier in the project, run the following commands:
 
-### Analyzing the Bundle Size
+```bash
+npm install --save-dev eslint prettier eslint-plugin-react eslint-config-prettier eslint-plugin-prettier
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Configure ESLint
 
-### Making a Progressive Web App
+1. Create an `.eslintrc.json` file in the root directory:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ```json
+   {
+     "env": {
+       "browser": true,
+       "es2021": true
+     },
+     "extends": [
+       "eslint:recommended",
+       "plugin:react/recommended",
+       "plugin:prettier/recommended"
+     ],
+     "parserOptions": {
+       "ecmaFeatures": {
+         "jsx": true
+       },
+       "ecmaVersion": 12,
+       "sourceType": "module"
+     },
+     "plugins": ["react", "prettier"],
+     "rules": {
+       "prettier/prettier": "error",
+       "react/react-in-jsx-scope": "off"
+     }
+   }
+   ```
 
-### Advanced Configuration
+2. Add a `lint` script to your `package.json`:
+   ```json
+   "scripts": {
+     "lint": "eslint ."
+   }
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Configure Prettier
 
-### Deployment
+1. Create a `.prettierrc` file in the root directory:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+   ```json
+   {
+     "semi": true,
+     "singleQuote": true,
+     "printWidth": 80
+   }
+   ```
 
-### `npm run build` fails to minify
+2. Add a `format` script to your `package.json`:
+   ```json
+   "scripts": {
+     "format": "prettier --write ."
+   }
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Running ESLint and Prettier
+
+- To check for linting errors:
+  ```bash
+  npm run lint
+  ```
+- To auto-format the code:
+  ```bash
+  npm run format
+  ```
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new feature branch (`git checkout -b feature/YourFeature`).
+3. Commit your changes (`git commit -m 'Add YourFeature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Acknowledgements
+
+- [Spotify Web API](https://developer.spotify.com/documentation/web-api/)
+- [MockAPI](https://mockapi.io/)
+- [ESLint and Prettier Guide](https://medium.com/@sindhujad6/setting-up-eslint-and-prettier-in-a-node-js-project-f2577ee2126f)
