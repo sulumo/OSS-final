@@ -9,7 +9,7 @@ export const fetchTopTags = async () => {
   let config = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: `http://ws.audioscrobbler.com/2.0/?method=tag.getTopTags&api_key=${API_KEY}&format=json`,
+    url: `https://ws.audioscrobbler.com/2.0/?method=tag.getTopTags&api_key=${API_KEY}&format=json`,
     headers: {}
   }
 
@@ -79,7 +79,7 @@ export const fetchTopTracks = async () => {
   const config = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: `http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=${API_KEY}&format=json&limit=10`,
+    url: `https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=${API_KEY}&format=json&limit=10`,
     headers: {}
   }
 
@@ -114,7 +114,7 @@ export const fetchTracksByTag = async (tagName, limit) => {
   const config = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: `http://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=${tagName}&api_key=0b8b5d6547cb1e0c5324c07ed3f260bb&format=json&limit=${limit}`,
+    url: `https://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=${tagName}&api_key=0b8b5d6547cb1e0c5324c07ed3f260bb&format=json&limit=${limit}`,
     headers: {}
   }
 
@@ -148,7 +148,7 @@ export const fetchTracksByTag = async (tagName, limit) => {
 export const fetchTopChartTracks = async () => {
   try {
     const response = await axios.get(
-      'http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=0b8b5d6547cb1e0c5324c07ed3f260bb&format=json'
+      'https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=0b8b5d6547cb1e0c5324c07ed3f260bb&format=json'
     )
 
     const tracks = response?.data?.tracks?.track
@@ -184,7 +184,7 @@ export const fetchTracksByQuery = async (trackName) => {
   const config = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: `http://ws.audioscrobbler.com/2.0/?method=track.search&track=${trackName}&api_key=${API_KEY}&format=json`,
+    url: `https://ws.audioscrobbler.com/2.0/?method=track.search&track=${trackName}&api_key=${API_KEY}&format=json`,
     headers: {}
   }
 
@@ -298,7 +298,7 @@ export const deleteTrackFromMockAPI = async (trackId) => {
 export const fetchTopChartArtists = async () => {
   const config = {
     method: 'get',
-    url: `http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=${API_KEY}&format=json&limit=5`,
+    url: `https://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=${API_KEY}&format=json&limit=5`,
     headers: {}
   }
 
@@ -339,7 +339,7 @@ export const getTopArtistsWithImages = async () => {
 export const getArtistTopTracks = async (artistName) => {
   const config = {
     method: 'get',
-    url: `http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${artistName}&api_key=${API_KEY}&format=json`,
+    url: `https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${artistName}&api_key=${API_KEY}&format=json`,
     headers: {}
   }
   try {
